@@ -4,7 +4,7 @@
 #include <QObject>
 #include "obsbase.h"
 
-class MyQtEmitter : public QObject
+class MyQtEmitter : public QObject, public EmitterInterface
 {
     Q_OBJECT
 public:
@@ -12,7 +12,7 @@ public:
     ~MyQtEmitter();
 };
 
-class MyQtReceiver : public ReceiverInterface, public QObject
+class MyQtReceiver : public QObject, public ReceiverInterface
 {
     Q_OBJECT
 public:
