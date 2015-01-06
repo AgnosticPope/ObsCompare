@@ -12,7 +12,7 @@ public:
   boost::signals2::signal<void ()> m_signal;
 };
 
-class BoostReceiver :
+class BoostReceiver : public boost::signals2::trackable,
         public ReceiverInterface
 {
 public:
