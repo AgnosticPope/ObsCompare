@@ -10,6 +10,8 @@ class MyQtEmitter : public QObject, public EmitterInterface
 public:
     MyQtEmitter();
     ~MyQtEmitter();
+signals:
+    void mySignal();
 };
 
 class MyQtReceiver : public QObject, public ReceiverInterface
@@ -18,6 +20,9 @@ class MyQtReceiver : public QObject, public ReceiverInterface
 public:
     MyQtReceiver();
     ~MyQtReceiver();
+    void connect(EmitterInterface* e);
+public slots:
+    void myReceive();
 };
 
 #endif // MYQTEMITTER_H
