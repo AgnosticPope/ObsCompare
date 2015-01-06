@@ -19,9 +19,11 @@ LIBS+= -L/usr/local/lib -lgtest
 
 SOURCES += main.cpp \
     obsstabilitytest.cpp \
-    boostobjects.cpp
+    boostobjects.cpp \
+    myqtemitter.cpp
 
 HEADERS += \
     obsbase.h \
     obsstabilitytest.h \
-    boostobjects.h
+    boostobjects.h \
+    myqtemitter.h
