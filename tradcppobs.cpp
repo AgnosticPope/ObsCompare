@@ -15,6 +15,17 @@ void TradEmitter::addObs(TradReceiver *r)
     m_obs.push_back(r);
 }
 
+void TradEmitter::remObs(TradReceiver *)
+{
+
+}
+
+TradReceiver::~TradReceiver()
+{
+    if (m_emit)
+        m_emit->remObs(this);
+}
+
 void TradReceiver::connect(EmitterInterface *eInt)
 {
     TradEmitter* e=dynamic_cast<TradEmitter*>(eInt);

@@ -1,9 +1,6 @@
 #ifndef OBSSTABILITYTEST_H
 #define OBSSTABILITYTEST_H
 
-#include <cppunit/TestFixture.h>
-#include <cppunit/extensions/HelperMacros.h>
-
 #include <QtTest/QtTest>
 
 class EmitterInterface;
