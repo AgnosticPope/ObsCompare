@@ -10,11 +10,8 @@ void BoostEmitter::doEmit()
 void BoostReceiver::connect(EmitterInterface *eInt)
 {
     BoostEmitter* e=dynamic_cast<BoostEmitter*>(eInt);
-    if (!e)
-    {
-        assert(e);
-        return;
-    }
+    if (!e) return;
+
     e->m_signal.connect(
       boost::bind(
         &BoostReceiver::OnReceive,

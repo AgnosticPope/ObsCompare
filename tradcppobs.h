@@ -1,7 +1,7 @@
 #ifndef TRADCPPOBS_H
 #define TRADCPPOBS_H
-#include <QSet>
 
+#include <QSet>
 #include "obsbase.h"
 
 class TradEmitter;
