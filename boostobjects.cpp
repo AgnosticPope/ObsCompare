@@ -4,7 +4,6 @@
 
 void BoostEmitter::doEmit()
 {
-    std::clog << "Emitter: emitting signal\n";
     m_signal();
 }
 

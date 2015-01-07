@@ -16,6 +16,7 @@ private slots:
     void testEasy();
     void testObsDelete();
     void testRecDelete();
+    void testMultiObs();
 private:
     EmitterInterface* m_emitter;
     ReceiverInterface* m_receiver;

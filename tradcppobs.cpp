@@ -11,12 +11,10 @@ TradEmitter::~TradEmitter()
 
 void TradEmitter::doEmit()
 {
-    std::clog << "Emitter: emitting signal\n";
     foreach(TradReceiver* r, m_obs)
     {
         r->OnReceive();
     }
-
 }
 
 void TradEmitter::addObs(TradReceiver *r)
