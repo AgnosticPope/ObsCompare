@@ -1,23 +1,32 @@
 #include "tradcppobs.h"
 #include <iostream>
 
+TradEmitter::~TradEmitter()
+{
+    foreach(TradReceiver* r, m_obs)
+    {
+        r->observe(NULL);
+    }
+}
+
 void TradEmitter::doEmit()
 {
     std::clog << "Emitter: emitting signal\n";
-    for(unsigned int i=0; i < m_obs.size(); i++)
+    foreach(TradReceiver* r, m_obs)
     {
-        m_obs[i]->OnReceive();
+        r->OnReceive();
     }
+
 }
 
 void TradEmitter::addObs(TradReceiver *r)
 {
-    m_obs.push_back(r);
+    m_obs.insert(r);
 }
 
-void TradEmitter::remObs(TradReceiver *)
+void TradEmitter::remObs(TradReceiver *r)
 {
-
+    m_obs.remove(r);
 }
 
 TradReceiver::~TradReceiver()
@@ -28,10 +37,17 @@ TradReceiver::~TradReceiver()
 
 void TradReceiver::connect(EmitterInterface *eInt)
 {
-    TradEmitter* e=dynamic_cast<TradEmitter*>(eInt);
-    if (!e)
+    observe(dynamic_cast<TradEmitter*>(eInt));
+}
+
+void TradReceiver::observe(TradEmitter *e)
+{
+    if (m_emit)
+        m_emit->remObs(this);
+    m_emit=e;
+    if (!m_emit)
     {
         return;
     }
-    e->addObs(this);
+    m_emit->addObs(this);
 }
