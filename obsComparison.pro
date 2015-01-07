@@ -21,10 +21,12 @@ SOURCES += main.cpp \
     obsstabilitytest.cpp \
     boostobjects.cpp \
     myqtemitter.cpp \
-    obsbase.cc
+    obsbase.cc \
+    tradcppobs.cpp
 
 HEADERS += \
     obsbase.h \
     obsstabilitytest.h \
     boostobjects.h \
-    myqtemitter.h
+    myqtemitter.h \
+    tradcppobs.h

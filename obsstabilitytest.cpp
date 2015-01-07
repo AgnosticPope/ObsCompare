@@ -1,9 +1,19 @@
 #include "obsstabilitytest.h"
 #include "myqtemitter.h"
 #include "boostobjects.h"
+#include "tradcppobs.h"
 
+#if 0
 #define TEST_EMITTER MyQtEmitter
 #define TEST_RECEIVER MyQtReceiver
+#else
+#define TEST_EMITTER TradEmitter
+#define TEST_RECEIVER TradReceiver
+
+//#define TEST_EMITTER BoostEmitter
+//#define TEST_RECEIVER BoostReceiver
+#endif
+
 
 void ObserverUnitTest::init()
 {
