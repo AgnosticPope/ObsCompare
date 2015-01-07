@@ -16,11 +16,10 @@ class BoostReceiver : public boost::signals2::trackable,
         public ReceiverInterface
 {
 public:
-  BoostReceiver(int data) : num(new int(data)) {}
-  virtual ~BoostReceiver() { delete num; num=0; }
-  virtual void OnReceive();
+  BoostReceiver(int data) : ReceiverInterface(data) {}
+  virtual ~BoostReceiver() { }
   virtual void connect(EmitterInterface *eInt);
-  int* num;
+
 };
 
 

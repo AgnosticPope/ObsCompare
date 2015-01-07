@@ -8,12 +8,6 @@ void BoostEmitter::doEmit()
     m_signal();
 }
 
-
-void BoostReceiver::OnReceive()
-{
-    std::clog << "Receiver: received signal " << *num <<std::endl;
-}
-
 void BoostReceiver::connect(EmitterInterface *eInt)
 {
     BoostEmitter* e=dynamic_cast<BoostEmitter*>(eInt);

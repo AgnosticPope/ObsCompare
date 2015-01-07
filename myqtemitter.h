@@ -18,7 +18,7 @@ class MyQtReceiver : public QObject, public ReceiverInterface
 {
     Q_OBJECT
 public:
-    MyQtReceiver();
+    MyQtReceiver(int data);
     ~MyQtReceiver();
     void connect(EmitterInterface* e);
 public slots:
