@@ -1,11 +1,14 @@
 #include "obsstabilitytest.h"
-
+#include "myqtemitter.h"
 #include "boostobjects.h"
+
+#define TEST_EMITTER MyQtEmitter
+#define TEST_RECEIVER MyQtReceiver
 
 void ObserverUnitTest::init()
 {
-    m_emitter=new BoostEmitter();
-    m_receiver=new BoostReceiver(5);
+    m_emitter=new TEST_EMITTER();
+    m_receiver=new TEST_RECEIVER(5);
 }
 
 void ObserverUnitTest::cleanup()

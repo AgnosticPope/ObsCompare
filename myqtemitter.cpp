@@ -1,6 +1,6 @@
 #include "myqtemitter.h"
 
-MyQtEmitter::MyQtEmitter()
+MyQtEmitter::MyQtEmitter() : QObject(), EmitterInterface()
 {
 
 }
@@ -8,6 +8,11 @@ MyQtEmitter::MyQtEmitter()
 MyQtEmitter::~MyQtEmitter()
 {
 
+}
+
+void MyQtEmitter::doEmit()
+{
+    emit SIGNAL(mySignal());
 }
 
 

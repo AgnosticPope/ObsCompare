@@ -10,6 +10,8 @@ class MyQtEmitter : public QObject, public EmitterInterface
 public:
     MyQtEmitter();
     ~MyQtEmitter();
+
+    virtual void doEmit();
 signals:
     void mySignal();
 };
