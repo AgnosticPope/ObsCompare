@@ -1,5 +1,4 @@
 #include "boostobjects.h"
-
 #include <iostream>
 
 void BoostEmitter::doEmit()

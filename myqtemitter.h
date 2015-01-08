@@ -16,6 +16,10 @@ signals:
 
 // This is the receiver object for Qt
 // Important notes:
+//    * Failing to inherit from QObject or using the Q_OBJECT macro
+//      will result in a compile time error.
+//    * Any C++ Function can be a slot, but must be declared as such
+//      to be used as such
 class MyQtReceiver : public QObject, public ReceiverInterface
 {
     Q_OBJECT
